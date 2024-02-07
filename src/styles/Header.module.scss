@@ -1,0 +1,51 @@
+.header {
+  border: 1px solid red;
+  height: 60px;
+  display: flex;
+  align-items: center;
+  padding-inline: 1.5rem;
+  gap: clamp(0.75rem, 3vw, 1.5rem);
+
+  & > :last-child {
+    display: none;
+  }
+
+  .logo-img {
+    flex: 1 1 auto;
+    max-width: 120px;
+
+    img {
+      display: block;
+    }
+  }
+
+  .menu-btn {
+    span {
+      margin-right: 0.25rem;
+    }
+  }
+
+  .about {
+    flex: 2 1 auto;
+  }
+
+  .login {
+    margin-right: 0.25rem;
+  }
+}
+
+@media (max-width: 40em) {
+  .header {
+    & > *:not(:first-child) {
+      display: none;
+    }
+
+    .logo-img {
+      max-width: none;
+    }
+
+    & > :last-child {
+      display: block;
+    }
+  }
+}

@@ -1,0 +1,29 @@
+a,
+.btn,
+.btn-icon {
+  cursor: pointer;
+}
+
+.btn,
+.btn-icon {
+  border-radius: 0.5rem;
+  background: transparent;
+}
+
+// Btn
+.btn {
+  font-size: 1rem;
+}
+
+.btn-medium {
+  padding: 0.5rem 0.75rem;
+}
+
+// Btn Icon
+.btn-icon {
+  border: none;
+
+  img {
+    display: block;
+  }
+}
