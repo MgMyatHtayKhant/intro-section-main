@@ -31,8 +31,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Repository URL](https://github.com/MgMyatHtayKhant/intro-section)
-- Live Site URL: [Live site URL](https://starlit-babka-b30b5b.netlify.app/)
+- Solution URL: [Repository URL](https://github.com/MgMyatHtayKhant/intro-section-main)
+- Live Site URL: [Live site URL](https://bejewelled-haupia-764a76.netlify.app/)
 
 ## My process
 
