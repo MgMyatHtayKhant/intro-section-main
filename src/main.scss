@@ -3,6 +3,9 @@
   --ALMOST-WHITE: hsl(0, 0%, 98%);
   --MEDIUM-GRAY: hsl(0, 0%, 41%);
   --ALMOST-BLACK: hsl(0, 0%, 8%);
+  --LINK-COLOR: hsl(228, 45%, 44%);
+
+  --SHADOW: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
 * {
@@ -14,4 +17,10 @@
 body {
   font-family: "Roboto", sans-serif;
   background-color: var(--ALMOST-WHITE);
+  line-height: 1.5;
+}
+
+body,
+button {
+  font-size: clamp(1rem, 2vw, 18px);
 }

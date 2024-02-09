@@ -1,11 +1,15 @@
+import { useContext } from "react";
+import { ListContext } from "./List";
 
 /* eslint-disable react/prop-types */
+export default function ListButton({ children, arrowUp, arrowDown }) {
 
-export default function ListButton({ children, src }) {
+    const { open, toggleOpen } = useContext(ListContext);
+
     return (
-        <a>
+        <a onClick={toggleOpen}>
             <span>{children}</span>
-            <img src={src} alt="" />
+            <img src={open ? arrowUp : arrowDown} alt="" />
         </a>
     );
 }

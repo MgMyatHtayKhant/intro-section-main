@@ -1,10 +1,19 @@
 .header {
-  border: 1px solid red;
-  height: 60px;
+  height: clamp(60px, 12.5vw, 80px);
   display: flex;
   align-items: center;
   padding-inline: 1.5rem;
-  gap: clamp(0.75rem, 3vw, 1.5rem);
+  gap: clamp(1rem, 2vw, 1.5rem);
+
+  a {
+    opacity: 0.7;
+    transition: all 0.5s;
+
+    &:hover {
+      opacity: 1;
+      text-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+    }
+  }
 
   & > :last-child {
     display: none;
@@ -13,30 +22,34 @@
   .logo-img {
     flex: 1 1 auto;
     max-width: 120px;
-
-    img {
-      display: block;
-    }
   }
 
-  .menu-btn {
-    span {
-      margin-right: 0.25rem;
+  .menu {
+    a {
+      span {
+        margin-right: 0.25rem;
+      }
+    }
+
+    ul {
+      position: absolute;
+      right: 0;
+      margin-top: 0.75rem;
+      padding: clamp(0.5rem, 1vw, 0.75rem);
+      border-radius: 0.5rem;
+      box-shadow: var(--SHADOW);
+      background-color: white;
     }
   }
 
   .about {
-    flex: 2 1 auto;
-  }
-
-  .login {
-    margin-right: 0.25rem;
+    flex: 1 1 auto;
   }
 }
 
 @media (max-width: 40em) {
   .header {
-    & > *:not(:first-child) {
+    & > :not(:first-child) {
       display: none;
     }
 

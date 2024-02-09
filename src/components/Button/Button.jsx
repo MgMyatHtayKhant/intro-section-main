@@ -7,21 +7,26 @@ export default function Button({
     children,
     size,
     variant,
+    weight,
     className,
 }) {
+
     let isNormal = type === "normal";
+    let defaultClass = isNormal ? "btn" : "btn-icon";
+
     let sizeClass = size && `btn-${size}`;
     let variantClass = variant && `btn-${variant}`;
-    let defaultClass = isNormal ? "btn" : "btn-icon";
-    const allClasses = classNames(defaultClass, className, sizeClass, variantClass);
+    let weightClass = weight && `btn-${weight}`;
+
+    const allClasses = classNames(defaultClass, className, sizeClass, variantClass, weightClass);
 
     return (
-        isNormal ?
-            <button className={allClasses}>{children}</button> :
-            <div>
-                <button className={allClasses} aria-label="Icon Button" onClick={toggle}>
-                    <img src={children} alt="" />
-                </button>
-            </div>
+        // <button className={allClasses}>{children}</button> :
+        <button
+            className={allClasses}
+            aria-label={isNormal ? "Button" : "Icon Button"}
+            onClick={isNormal ? () => { } : toggle} >
+            {isNormal ? children : <img src={children} alt="" />}
+        </button>
     );
 }

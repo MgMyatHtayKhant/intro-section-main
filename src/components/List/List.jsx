@@ -1,18 +1,26 @@
-// import { createContext } from "react";
+// React
+import { createContext } from "react";
 
-// const ListContext = createContext();
+// Custome Hooks
+import useToggle from "../../hooks/useToggle";
+
+// Create Context
+const ListContext = createContext();
+export { ListContext };
 
 /* eslint-disable react/prop-types */
 export default function List({ className, children }) {
 
-    console.log(className);
+    const [open, toggleOpen] = useToggle();
+
+    let allClasses = className ? `menu ${className}` : "menu";
     return (
-
-        <div className={className}>
-            {
-                children
-            }
-        </div>
-
+        <ListContext.Provider value={{ open, toggleOpen }}>
+            <div className={allClasses}>
+                {
+                    children
+                }
+            </div>
+        </ListContext.Provider>
     );
 }

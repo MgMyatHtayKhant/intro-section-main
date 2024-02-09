@@ -1,15 +1,25 @@
-// import reactLogo from './assets/react.svg';
-// import viteLogo from '/vite.svg';
+// Components
+import Hero from "./components/Hero/Hero";
 import Header from "./components/Navigation/Header";
 import Nav from "./components/Navigation/Nav";
+
+// Style
 import './App.scss';
 
+// Data
+import menuData from "./menuData";
+
+// hook
+import useToggle from "./hooks/useToggle";
+
 function App() {
+  const [open, toggleOpen] = useToggle();
 
   return (
     <>
-      <Header />
-      <Nav />
+      <Header menu={menuData} toggleOpen={toggleOpen} />
+      <Nav menu={menuData} open={open} toggleOpen={toggleOpen} />
+      <Hero />
     </>
   );
 }

@@ -1,59 +1,59 @@
 // Images
 import {
     closeIcon,
-    arrowDownIcon,
 } from "../../assets/images/index";
 
 // Componenets
-import List from "../List/index";
+import Menu from "../List/index";
 import Button from "../Button/Button";
 
 // Style 
-import "../../styles/Nav.module.scss";
+import style from "../../styles/Nav.module.scss";
 
+/* eslint-disable react/prop-types */
+export default function Nav({ menu, open, toggleOpen }) {
 
-export default function Nav() {
+    const styling = {
+        move: {
+            transform: open ? "translate(0)" : "translate(100%)"
+        },
+        display: {
+            visibility: open ? "visible" : "hidden",
+            opacity: open ? 1 : 0
+        }
+    };
 
     return (
-        <nav className="navigation">
+        <>
+            <nav style={styling.move} className={style.navigation}>
 
-            <Button>{closeIcon}</Button>
+                <div>
+                    <Button toggle={toggleOpen} >{closeIcon}</Button>
+                </div>
 
-            <List>
-                <List.Button src={arrowDownIcon}>
-                    Features
-                </List.Button>
-                {/* <List.Dropdown>
-                    <List.Item src="">Todo List</List.Item>
-                    <List.Item src="">Calender</List.Item>
-                    <List.Item src="">Reminders</List.Item>
-                    <List.Item src="">Planing</List.Item>
-                </List.Dropdown> */}
-            </List>
+                <Menu
+                    className={style.menu}
+                    btnName={"Feature"}
+                    menu={menu.first} />
 
-            <List>
-                <List.Button src={arrowDownIcon}>
-                    Company
-                </List.Button>
-                {/* <List.Dropdown>
-                    <List.Item src="">History</List.Item>
-                    <List.Item src="">Our Team</List.Item>
-                    <List.Item src="">Blog</List.Item>
-                </List.Dropdown> */}
-            </List>
+                <Menu
+                    className={style.menu}
+                    btnName={"Company"}
+                    menu={menu.second} />
 
-            <a>Careers</a>
+                <a>Careers</a>
 
-            <a>About</a>
+                <a>About</a>
 
-            <div className="register">
-                <a className="login">
-                    Login
-                </a>
-                <a className="btn btn-register">
-                    Register
-                </a>
-            </div>
-        </nav>
+                <div>
+                    <a>Login</a>
+
+                    <Button className={style.btn} type="normal" size="medium" variant="light">
+                        Register
+                    </Button>
+                </div>
+            </nav>
+            <div style={styling.display} className={style.overlay}></div>
+        </>
     );
 }

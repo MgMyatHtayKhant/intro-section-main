@@ -1,29 +1,81 @@
-a,
-.btn,
-.btn-icon {
-  cursor: pointer;
+ul {
+  list-style: none;
 }
 
+img {
+  display: block;
+}
+
+a,
+button {
+  cursor: pointer;
+  user-select: none;
+}
+
+/* =====Button===== */
+
+.btn-icon {
+  background: transparent;
+  border: none;
+}
+
+// Share
 .btn,
 .btn-icon {
   border-radius: 0.5rem;
-  background: transparent;
 }
 
-// Btn
-.btn {
-  font-size: 1rem;
-}
-
+// Color and Size
 .btn-medium {
   padding: 0.5rem 0.75rem;
 }
 
-// Btn Icon
-.btn-icon {
-  border: none;
+.btn-large {
+  padding: 0.75rem 1rem;
+}
 
-  img {
-    display: block;
+.btn-light {
+  background: transparent;
+}
+
+.btn-dark {
+  color: var(--ALMOST-WHITE);
+  border: none;
+  background-color: var(--ALMOST-BLACK);
+  transition: background-color 0.5s;
+}
+
+.btn-dark:hover {
+  color: var(--ALMOST-BLACK);
+  box-shadow: var(--SHADOW);
+  background-color: transparent;
+}
+
+.btn-bold {
+  font-weight: 600;
+}
+/* ========== */
+
+// List
+.menu {
+  position: relative;
+
+  a {
+    display: flex;
+    align-items: center;
+  }
+
+  ul {
+    width: max-content;
+
+    li.icon-item {
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+
+    & > :not(:last-child) {
+      margin-bottom: 0.5rem;
+    }
   }
 }

@@ -1,0 +1,23 @@
+@mixin flex-box($direction) {
+  display: flex;
+  flex-direction: $direction;
+}
+
+@mixin flex-config($direction, $justify, $align) {
+  @include flex-box($direction);
+  justify-content: $justify;
+  align-items: $align;
+}
+
+%position {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+}
+
+@mixin transitioning($color, $properties, $index) {
+  background-color: $color;
+  transition: $properties 0.3s;
+  z-index: $index;
+}
