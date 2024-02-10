@@ -24,3 +24,8 @@ body,
 button {
   font-size: clamp(1rem, 2vw, 18px);
 }
+
+#root {
+  max-width: 1440px;
+  margin: auto;
+}
